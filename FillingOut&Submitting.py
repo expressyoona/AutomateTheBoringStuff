@@ -1,0 +1,10 @@
+from selenium import webdriver
+browser = webdriver.Firefox()
+browser.get('https://accounts.google.com/signin')
+emailEle = browser.find_element_by_id('identifierId')
+emailEle.send_keys('17it142@sict.udn.vn')
+next_bt = browser.find_element_by_id('identifierNext')
+next_bt.click()
+password = browser.find_element_by_class_name('Xb9hP')
+password.send_keys('123456789')
+password.submit()
