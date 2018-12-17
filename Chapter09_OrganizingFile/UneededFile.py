@@ -1,3 +1,4 @@
+#Find uneeded file(It's size > 100 MB)
 import send2trash, os
 conv = lambda x: x>>20
 def findUneededFile(folder):
