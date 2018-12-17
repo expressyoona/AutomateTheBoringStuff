@@ -9,8 +9,11 @@ def CopySpecific(folder):
 		for filename in filenames:
 			if filename.endswith('.html'):
 				pass
+				"""
+				Check information before copy
 				#print(filename)
 				#print(os.path.join(foldername, filename))
 				#shutil.copy(os.path.join(foldername, filename), des)
+				"""
 	print('Done!')
 CopySpecific('F:\\IT\\Web')
