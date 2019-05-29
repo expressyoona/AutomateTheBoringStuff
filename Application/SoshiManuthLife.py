@@ -1,10 +1,10 @@
-import webbrowser, requests, bs4
-def saveFile(url_link, filename):
-	res = requests.get(url_link)
-	playFile = open(filename, 'wb')
-	for chunk in res.iter_content(100000):
-		playFile.write(chunk)
-	playFile.close()
+import webbrowser
+import requests
+import bs4
+
+def saveFile(url, filename):
+	with open(filename, 'wb') as file:
+		file.write(requests.get(url).content))
 #Get
 URL_link = 'https://soshi.manuth.life/data/soshi/pictures/ohgg/albums/lil-touch/'
 res = requests.get(URL_link)
