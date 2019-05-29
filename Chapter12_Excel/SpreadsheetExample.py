@@ -39,10 +39,10 @@ Quá trình xử lý:
 
 --- WRITING EXCEL DOCUMENTS ---
 wb = openpyxl.Workbook() #Create a new Workbook
-wb.create_sheet() #Automatic create a new sheet_.
-wb.create_sheet(index = i, title = '')
+ws = wb.create_sheet() #Automatic create a new sheet_.
+ws = wb.create_sheet(index = i, title = '')
 wb.remove(worksheet) or del wb[sheetname] #Delete a sheet
-wb['A1'] = value #Assign value
+ws['A1'] = value #Assign value
 wb.save('') #Save
 
 --- SETTING THE FONT STYLE ---
