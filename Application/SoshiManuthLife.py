@@ -17,12 +17,4 @@ linkElems = soup.select('a')
 for i in range(1, len(linkElems)):
 	link_picture = URL_link + linkElems[i].get('href')
 	saveFile(link_picture, 'Picture_' + str(i) + '.jpg')
-	"""
-	res_other = requests.get(link_picture)
-	soup_other = bs4.BeautifulSoup(res_other.text)
-	playFile = open('Picture_' + str(i) + '.jpg', 'wb')
-	for chunk in res.iter_content(100000):
-		playFile.write(chunk)
-		"""
-#playFile.close()
 print('Done!')
