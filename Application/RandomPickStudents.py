@@ -2,15 +2,18 @@ import openpyxl
 import random
 from unidecode import unidecode
 
-wb = openpyxl.load_workbook('DanhSachLop_Info.xlsx')
+SOURCE_FILENAME = 'DanhSachLop_Info.xlsx'
+DESTINATION_FILENAME = '17IT1_NCKH.xlsx'
+# MAX = 37
+N = 12
+
+wb = openpyxl.load_workbook(SOURCE_FILENAME)
 sheet = wb.active
 
 def getEmail(fullname):
 	fullname = unidecode(fullname.lower())
 	return "".join(w[0] for w in fullname.split(' ')[:-1]) + fullname.split(' ')[-1] + '.' + '17it1@sict.udn.vn'
 
-MAX = 37
-N = 12
 
 new_workbook = openpyxl.Workbook()
 ws = new_workbook.create_sheet(title='17IT1')
@@ -25,5 +28,6 @@ for index, element in enumerate(L):
 	fullname = sheet.cell(column = 4, row=element + 2).value
 	ws['C' + str(index + 1)] = fullname
 	ws['D' + str(index + 1)] = getEmail(fullname)
-new_workbook.save('17IT1_NCKH.xlsx')
+
+new_workbook.save(DESTINATION_FILENAME)
 print('Done!')
