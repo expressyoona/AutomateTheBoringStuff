@@ -2,8 +2,8 @@ import openpyxl
 import random
 from unidecode import unidecode
 
-SOURCE_FILENAME = 'DanhSachLop_Info.xlsx'
-DESTINATION_FILENAME = '17IT1_NCKH.xlsx'
+SOURCE_FILENAME = 'Book.xlsx'
+DESTINATION_FILENAME = 'Mail.xlsx'
 # MAX = 37
 N = 12
 
